@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="nofollow, noindex" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://belajarbikinwebsite.my.id/" />
+
+    <title>Belajar Bikin Website</title>
+  </head>
+  <body>
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <main class="center" role="main">
+      <section class="card" aria-label="Konten utama">
+        <h1>Halo!! 👋</h1>
+        <p
+          id="type-target"
+          class="typing"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+      </section>
+    </main>
+
+    <footer>create with ❤️ by Mas-Mas Bojonegoro</footer>
+
+    <script type="text/javascript" src="particles.min.js"></script>
+
+    <script>
+      (function typewriter() {
+        const el = document.getElementById("type-target");
+        const text = "Ini adalah halaman belajar bikin website 😁✌";
+        const speed = 50;
+        let i = 0;
+
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+        if (reduceMotion) {
+          el.textContent = text;
+          return;
+        }
+
+        (function tick() {
+          if (i <= text.length) {
+            el.textContent = text.slice(0, i++);
+            setTimeout(tick, speed);
+          }
+        })();
+      })();
+
+      // Konfigurasi particles.js
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: reduceMotion ? 0 : 90,
+            density: { enable: true, value_area: 800 },
+          },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.7 },
+          size: { value: 2.4, random: true },
+          line_linked: {
+            enable: true,
+            distance: 130,
+            color: "#ffffff",
+            opacity: 0.12,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1.2,
+            out_mode: "bounce",
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            resize: true,
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+  </body>
+</html>

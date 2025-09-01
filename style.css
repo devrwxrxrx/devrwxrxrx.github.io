@@ -1,0 +1,97 @@
+:root {
+  --fg: #ffffff;
+  --pg: #cfd8dc;
+  --bg: #0b1320;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--fg);
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#particles-js {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.center {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+.card {
+  width: 100%;
+  max-width: 780px;
+  text-align: left;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+p {
+  margin: 0;
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  color: var(--pg);
+}
+
+.typing {
+  position: relative;
+  white-space: pre-wrap;
+}
+.typing::after {
+  content: "│";
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+  opacity: 0.8;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--pg);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #particles-js {
+    display: none;
+  }
+  .typing::after {
+    animation: none;
+  }
+}
